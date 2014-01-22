@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
+  <display-name>WirelessShopWeb</display-name>
+  <servlet>
+    <servlet-name>initServlet</servlet-name>
+    <servlet-class>com.ws.web.init.InitServlet</servlet-class>
+      <!-- 配置文件路径 -->
+      <init-param>
+	    <param-name>config</param-name>
+      	<param-value>com/ws/config/config.json</param-value>
+   	  </init-param>
+    <load-on-startup>0</load-on-startup>
+  </servlet>
+  
+ <!-- action -->
+ <filter>
+    <filter-name>VerifyRequestActionFilter</filter-name>
+    <filter-class>com.ws.web.filter.VerifyRequestActionFilter</filter-class>
+    <init-param>
+      <param-name>ResourceWhiteList</param-name>
+      <param-value>admin,business,mobile,weixin</param-value>
+    </init-param>
+  </filter>
+  <filter-mapping>
+    <filter-name>VerifyRequestActionFilter</filter-name>
+    <url-pattern>*.action</url-pattern>
+  </filter-mapping>
+  <!-- admin -->
+  <filter>
+    <filter-name>AdminBasicFilter</filter-name>
+    <filter-class>com.ws.web.filter.AdminBasicFilter</filter-class>
+    <init-param>
+      <param-name>PageWhiteList</param-name>
+      <param-value>index.htm</param-value>
+    </init-param>
+    <init-param>
+      <param-name>ActionWhiteList</param-name>
+      <param-value>AdminLogin.action</param-value>
+    </init-param>
+  </filter>
+  <filter-mapping>
+    <filter-name>AdminBasicFilter</filter-name>
+    <url-pattern>/admin/*</url-pattern>
+  </filter-mapping>
+  <!-- mobile -->
+  <filter>
+    <filter-name>MobileBasicFilter</filter-name>
+    <filter-class>com.ws.web.filter.MobileBasicFilter</filter-class>
+    <init-param>
+      <param-name>PageWhiteList</param-name>
+      <param-value>login.htm,food.htm</param-value>
+    </init-param>
+    <init-param>
+      <param-name>ActionWhiteList</param-name>
+      <param-value>
+      	QueryFood!mobile.action,QueryDept!mobile.action
+      </param-value>
+    </init-param>
+  </filter>
+  <filter-mapping>
+    <filter-name>MobileBasicFilter</filter-name>
+    <url-pattern>/mobile/*</url-pattern>
+  </filter-mapping>
+  
+  <!-- struts2 -->
+  <filter>
+    <filter-name>struts2</filter-name>
+    <filter-class>org.apache.struts2.dispatcher.ng.filter.StrutsPrepareAndExecuteFilter</filter-class>
+    <init-param>
+      <param-name>config</param-name>
+      <param-value>struts-default.xml,struts-plugin.xml,com/ws/web/config/struts/struts.xml</param-value>
+    </init-param>
+  </filter>
+  <filter-mapping>
+    <filter-name>struts2</filter-name>
+    <url-pattern>*.action</url-pattern>
+  </filter-mapping>
+  <session-config>
+    <session-timeout>30</session-timeout>
+  </session-config>
+  
+  <welcome-file-list>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.html</welcome-file>
+  </welcome-file-list>
+</web-app>

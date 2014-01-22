@@ -1,0 +1,156 @@
+﻿.x-window-footer { 
+    position: relative;  top: 0;  right: 0; 
+} 
+.x-tab-strip span.x-tab-strip-text { 
+	font-size: 12px;
+} 
+.x-panel-header { 
+    font-size: 12px; 
+} 
+.x-tree-node { 
+    font-size: 12px; 
+} 
+.x-grid3-hd-row TD { 
+    font-size: 12px; 
+} 
+.x-grid3-row TD { 
+    font-size: 12px; 
+} 
+.x-tip .x-tip-bd { 
+    font-size: 12px; 
+} 
+.x-tip h3{ 
+    font-size: 12px; 
+} 
+.x-tip .x-tip-bd-inner{ 
+    font-size:12px; 
+} 
+.x-panel-tl .x-panel-header { 
+    FONT: normal 12px tahoma,arial,verdana,sans-serif; 
+} 
+.x-form-field { 
+    FONT: 12px tahoma,arial,helvetica,sans-serif    
+} 
+.x-small-editor .x-form-field { 
+    FONT: 12px tahoma,arial,helvetica,sans-serif    
+} 
+.x-combo-list-item { 
+    FONT: 12px tahoma,arial,helvetica,sans-serif;    
+}    
+.x-menu-list-item { 
+    FONT: 12px tahoma,arial,sans-serif; 
+} 
+.x-window-tl .x-window-header { 
+    FONT: bold 12px tahoma,arial,verdana,sans-serif;    
+} 
+.x-layout-split-west .x-layout-mini {    
+    BACKGROUND-IMAGE: url(../images/mini-left.jpg);    
+} 
+.ext-ie .x-form-text { 
+    margin-top:1px; 
+}
+.x-form-item {    
+    FONT: 12px tahoma,arial,helvetica,sans-serif 
+} 
+.x-grid-group-hd div {    
+    FONT: bold 12px tahoma,arial,helvetica,sans-serif; 
+} 
+..x-btn-text-icon .x-btn-center .x-btn-text {
+	background-position:0pt 2px; 
+	background-repeat:no-repeat; 
+	padding:3px 0pt 2px 18px; 
+} 
+.ext-gecko .x-btn button {
+	padding-left:0pt; 
+	padding-right:0pt; 
+} 
+.x-btn button{ 
+    font-size:12px; 
+} 
+.x-btn-text{ 
+    font-size:12px; 
+} 
+.x-toolbar-cell label{
+	font-size:12px; 	
+}
+.x-toolbar label{
+	font-size:12px; 	
+}
+.x-toolbar-cell div{
+	font-size:12px;
+} 
+.x-form-radio-wrap-inner .x-form-cb-label{
+	font-size:12px;
+}
+.x-fieldset-header-text{
+	font-size:12px; 
+}
+.x-column{
+	font-size:12px; 
+}
+.x-toolbar .ytb-text{
+	font-size:12px; 
+}
+.x-toolbar .x-paging-info{
+	font-size:12px; 
+}
+.ytb-text span{
+	font-size:12px; 
+}
+.x-panel-header x-tree-hd-text{
+	font-size:12px; 
+}
+.x-panel-header x-tree-col-text{
+	font-size:12px; 
+}
+.x-tree-headers .x-tree-hd-text{
+	font-size:12px; 
+}
+.x-tree-col .x-tree-col-text{
+	font-size:12px; 
+}
+.x-form-check-wrap-inner .x-form-cb-label{
+	font-size:12px; 
+}
+.x-form-check-wrap .x-form-cb-label{
+	font-size:12px; 
+}
+a{
+	color: blue;
+	text-decoration: none;
+}
+a:link { 
+	text-decoration: none;
+	color: blue;
+}
+a:hover { 
+	text-decoration: underline;
+	color: green;
+}
+.x-grid3-row td, .x-grid3-summary-row td{ 
+	line-height : 20px;
+	vertical-align : middle;
+}
+.x-grid3-row img, .x-grid3-summary-row img{ 
+	vertical-align : middle;
+}
+.x-form-focus, textarea.x-form-focus{
+	border : 1px solid #4881f3;
+	background:#f9f9c0 repeat-x 0 0;
+}
+.x-tree-node-el{
+	line-height: 22px;
+}
+.x-tree-node-icon{
+	vertical-align: middle;
+}
+.x-tree-node-anchor{
+	font-size: 15px;
+	font-weight: bold;
+}
+.ext-el-mask, .x-shadow, .x-window,.x-window-plain, .x-window-dlg{
+	z-index: 30000 !important;
+}
+.x-combo-list{
+	z-index: 30000 !important;
+}
