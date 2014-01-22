@@ -1,4 +1,4 @@
-package com.ws.socket.javaSocket;
+package com.ws.server.jsocket;
 
 public class PrintServerRunHandler implements Runnable{
 	private PrintSocket task;
