@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="X-UA-Compatible" content="edge" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="initial-scale=1.0,user-scalable=no,maximum-scale=1,width=device-width">
+<meta name="format-detection" content="telephone=yes">
+<!-- <title>微餐厅 -- 菜品列表</title> -->
+<script type="text/javascript" src="../js/lib/zepto/zepto.min.js"></script>
+<link type="text/css" rel="stylesheet" href="../js/lib/zepto/zepto.ux.css">
+<script type="text/javascript" src="../js/lib/zepto/zepto.ux.js"></script>
+
+<link type="text/css" rel="stylesheet" href="../css/mobile/food.css">
+<script type="text/javascript" src="../js/mobile/food/load.js"></script>
+<script type="text/javascript" src="../js/mobile/food/main.js"></script>
+<script type="text/javascript">
+
+</script>
+</head>
+<body>
+
+<div id="divFoodListBox">
+	<div class="f-l-b"> <div>
+		<div class="f-l-b-img">
+			<div class="f-l-b-name box-horizontal">
+				<div>上汤菜心</div>
+				<div class="div-full"></div>
+				<div class="f-l-b-count">88</div>
+			</div>
+		</div>
+		<div class="box-horizontal" style="background-color: #fff;">
+			<div class="f-l-b-prict div-full">¥:&nbsp;<span class="f-l-b-prict-c">8888.88</span></div>
+			
+			<div class="f-l-b-operate" onclick="alert(this)"></div>
+		</div>
+	</div> </div>
+</div>
+
+
+</body>
+</html>

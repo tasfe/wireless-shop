@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="initial-scale=1.0,user-scalable=no,maximum-scale=1,width=device-width">
+<meta name="format-detection" content="telephone=yes">
+<title>微餐厅 -- 菜品列表</title>
+<script type="text/javascript" src="../lib/js/zepto/zepto.min.js"></script>
+<link type="text/css" rel="stylesheet" href="../lib/js/zepto/zepto.ux.css">
+<script type="text/javascript" src="../lib/js/zepto/zepto.ux.js"></script>
+<link type="text/css" rel="stylesheet" href="./css/food.css">
+<script type="text/javascript" src="./js/food/load.js"></script>
+<script type="text/javascript" src="./js/food/main.js"></script>
+<script type="text/javascript">
+function left(){
+	//alert('left') > div[data-type=recommend]
+	$('#divBodyForMain').animate({
+		translateX: '0'
+	}, 500, 'ease-out');
+}
+
+function right(){
+	//alert('right')
+	$('#divBodyForMain').animate({
+		translateX: '-100%'
+	}, 500, 'ease-out');
+}
+</script>
+</head>
+<body>
+
+<div id="divMainRegion">
+
+<div id="divTitleForMain" class="box-horizontal">
+	<div data-type="recommend" class="div-full title-select" onClick="left()">店主推荐</div>
+	<div data-type="list" class="div-full" onClick="right()">所有菜品</div>
+</div>
+
+<div id="divBodyForMain" class="box-horizontal">
+	<div data-type="recommend" class="">
+		<div class="div-r-box">
+		</div>
+	</div>
+	<div data-type="list" class="">
+	所有菜品
+	<br><br><br><br><br><br><br><br><br><br>
+	<br><br><br><br><br><br><br><br><br><br>
+	</div>
+</div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,70 @@
+*{maring:0;padding:0;}
+body{
+	background-color: #ddd;
+}
+
+#divFoodListBox{
+	width: 100%;
+	
+}
+
+#divFoodListBox > div:nth-child(2n+1) > div{
+	width: 91%;
+	margin: 6px 3% 0px 6%;
+}
+#divFoodListBox > div:nth-child(2n) > div{
+	width: 91%;
+	margin: 6px 6% 0px 3%;
+}
+
+.f-l-b{
+	float: left;
+	height: 150px;
+	width: 50%;
+	color: #000;
+	//border-bottom: 1px solid #f1f1f1;
+	//border-top: 1px solid #eee;
+	//background: rgba(0, 0, 0, .78);
+	//color: #fff;
+	//box-shadow: 2px 2px 1px #666666;
+}
+.f-l-b-img{
+	height: 100px;
+	background: #ddd;
+	background-image: url(../../images/nophoto.png);
+	background-size: 100% 100%;
+}
+.f-l-b-count{
+	position: relative;
+	min-width: 30px;
+	line-height: 20px;
+	font-size: 13px;
+	color: #fff;
+	text-align: center;
+	font-weight: bold;
+	background: rgba(0, 0, 0, .5);
+	//visibility: hidden;
+}
+.f-l-b-name{
+	position: relative;
+	top: 80px;
+	line-height: 20px;
+	font-size: 13px;
+	padding-left: 5px;
+	color: #fff;
+	background: rgba(0, 0, 0, .5);
+}
+.f-l-b-prict{
+	font-size: 15px;
+	padding: 0 0 0 5px;
+	line-height: 32px;
+}
+.f-l-b-prict .f-l-b-prict-c{
+	color: #00aa00;
+}
+.f-l-b-operate{
+	background-image: url(../../images/icon-o-plus.png);
+	background-size: 100% 100%;
+	text-align: center;
+	width: 40px;
+}

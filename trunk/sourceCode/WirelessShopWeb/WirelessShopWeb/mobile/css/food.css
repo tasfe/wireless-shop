@@ -1,0 +1,210 @@
+*{maring:0;padding:0;}
+body{
+	overflow-y: hidden;
+	overflow-x: hidden;
+	//background: rgba(117, 96, 139, 1);
+	//background: rgba(45, 0, 78, .7);
+	//background: rgba(137, 118, 111, 1);
+	//background: rgba(120, 189, 142, 1);
+	//background: rgba(105, 105, 105, 1);
+	//background: #9955CC;
+	//background: #616161;
+	background: #F5F5F5;
+}
+/* --------------------------------------------- */
+.text-shadow{
+	text-shadow: 0 1px 1px #fff;
+	color: #2D004E;
+	font-size: 18px;
+	font-weight: bold;
+}
+/* --------------------------------------------- */
+#divFoodView{
+	overflow: hidden;
+	z-index: -1;
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+}
+#divFoodView-Body{
+	overflow-y: auto;
+}
+.div-fv-lb-m{
+	width: 100%;
+	border-bottom: 1px solid #aaa;
+	box-shadow: 0px 0px 1px #fff;
+	background: rgba(255,255,255,1)
+}
+
+.div-fv-lb-m-img{
+	width: 110px;
+	height: 80px;
+	background: rgba(0, 0, 0, .3);
+	background-size: 100% 100%;
+}
+.div-fv-lb-m-msg{
+	padding-left: 10px;
+}
+.div-fv-lb-m-msg > div[data-type=name]{
+	padding-top: 5px;
+	font-size: 15px;
+	//font-weight: bold;
+	color: #000;
+	text-shadow: rgba(255,255,255,0.5) 0 5px 6px, rgba(255,255,255,0.2) 1px 3px 3px;
+	//text-shadow: #000 1px 0 0, #000 0 1px 0, #000 -1px 0 0, #000 0 -1px 0;
+}
+.div-fv-lb-m-msg > div[data-type=price]{
+	padding-top: 5px;
+	color: #00aa00;
+	font-size: 13px;
+}
+.div-fv-lb-m-has{
+	width: 50px;
+	line-height: 80px;
+	text-align: center;
+	color: #bbb;
+	font-size: 70px;
+}
+.div-fv-lb-m-has-select{
+	color: #00aa00;
+	border-right: 5px solid #00aa00;
+}
+#divFoodView-Body-Paging{
+	line-height: 80px;
+	color: #999999;
+	text-align: center;
+}
+/* --------------------------------------------- */
+#divFoodView-BottomNav{
+	//box-shadow: 0 0 10px rgba(0, 0, 0, 1);
+	text-align: center;
+	line-height: 38px;
+	border-top: 2px solid #00aa00;
+}
+#divFoodView-BottomNav > div{
+	background: #FFFFFF;
+	color: #000;
+	//text-shadow: 1px 1px 2px rgba(0, 0, 0, 1);
+	//font-family: "微软雅黑",Arial;
+}
+#divFoodView-BottomNav > div:last-child{
+	
+}
+/* --------------------------------------------- */
+#divFilterKitchen{
+	z-index: 999;
+	position: absolute;
+	width: 100%;
+	-webkit-transform: translateX(-100%);
+	background: rgba(0, 0, 0, .5);
+}
+#divFilterKitchen > div{ height: 100%; }
+#divFilterKitchen-dept{
+	width: 100px;
+	background: #f5f5f5;
+}
+.n-l-title{
+	line-height: 30px;
+	border-bottom: 2px solid #00aa00;
+	//background: rgba(137, 118, 111, 1);
+	background: #fff;
+	text-align: center;
+}
+.n-l-d-main{
+	overflow-y: auto;
+	box-shadow: 0px 0px 30px #bbb inset;
+}
+.n-l-d-main > div{
+	width: 95px;
+	line-height: 35px;
+	font-size: 15px;
+	padding: 0 0 0 5px;
+}
+.n-l-d-main-select{
+	background: #fff;
+	width: 90px !important;
+	border-left: 5px solid rgba(0, 170, 0, 1) !important;
+	font-weight: bold;
+	color: #00aa00;
+}
+.n-l-k-main{
+	overflow-y: auto;
+}
+.n-l-k-main > div{
+	width: 95%;
+	line-height: 35px;
+	font-size: 15px;
+	padding: 0 0 0 5%;
+}
+.n-l-k-main-select{
+	font-weight: bold !important;
+	width: 90px !important;
+	border-left: 5px solid rgba(0, 170, 0, 1) !important;
+	color: #00aa00;
+}
+#divFilterKitchen-kitchen{
+	width: 100px;
+	background: #fff;
+}
+
+#divFilterKitchen-mask{
+	
+}
+/* --------------------------------------------- */
+#divShoppingBasket{
+	display: none;
+	z-index: 999;
+	position: absolute;
+	width: 100%;
+	-webkit-transform: translateX(0);
+	background: #fff;
+}
+#divShoppingBasket > div{ width: 100%; }
+#divSB-Body{
+	
+}
+.div-sb-b-m{
+	width: 100%;
+	border-bottom: 1px solid #aaa;
+	font-size: 13px;
+}
+.div-sb-b-m-msg > div{
+	line-height: 20px;
+}
+.div-sb-b-m-cat{
+	border-left: 1px solid #ddd;
+	width: 30px;
+}
+.div-sb-b-m-add{
+	border-left: 1px solid #ddd;
+	width: 30px;
+}
+.div-sb-b-m-count{
+	border-left: 1px solid #ddd;
+	width: 30px;
+	
+}
+#divSB-Sum{
+	line-height: 38px;
+	text-align: center;
+	border-top: 1px solid #595959;
+	color: #595959;
+}
+#divSB-Bottom{
+	
+}
+#divSB-Bottom > div{
+	line-height: 38px;
+	text-align: center;
+	border-top: 2px solid #00aa00;
+	background: #FFFFFF;
+	color: #000;
+}
+
+
+
+
+
+
+

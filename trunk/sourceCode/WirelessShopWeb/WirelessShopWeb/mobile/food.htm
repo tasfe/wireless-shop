@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="X-UA-Compatible" content="edge" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="initial-scale=1.0,user-scalable=no,maximum-scale=1,width=device-width">
+<meta name="format-detection" content="telephone=yes">
+<!-- <title>微餐厅 -- 菜品列表</title> -->
+<script type="text/javascript" src="../lib/js/zepto/zepto.min.js"></script>
+<link type="text/css" rel="stylesheet" href="../lib/js/zepto/zepto.ux.css">
+<script type="text/javascript" src="../lib/js/zepto/zepto.ux.js"></script>
+
+<link type="text/css" rel="stylesheet" href="./css/food.css">
+<script type="text/javascript" src="./js/food/load.js"></script>
+<script type="text/javascript" src="./js/food/main.js"></script>
+<script type="text/javascript">
+document.addEventListener('WeixinJSBridgeReady', function onBridgeReady() {
+	//WeixinJSBridge.call('hideToolbar');
+});
+var params = {
+	start : 0,
+	limit : 10,
+	rid : 26,
+	kitchenId : 0,
+	orderData : [],
+	foodData : [],
+	deptData : [],
+	getDeptView : null
+};
+</script>
+</head>
+<body>
+
+<div id="divFilterKitchen" class="box-horizontal" >
+	<div id="divFilterKitchen-dept" class="box-vertical">
+		<div class="n-l-title">大类</div>
+		<div data-type="main" class="div-full n-l-d-main" data-isInit="false"> </div>
+	</div>
+	<div id="divFilterKitchen-kitchen" class="box-vertical">
+		<div class="n-l-title">小类</div>
+		<div data-type="main" class="div-full n-l-k-main"> </div>
+	</div>
+	<div id="divFilterKitchen-mask" class="div-full">&nbsp;</div>
+</div>
+
+<div id="divShoppingBasket" class="box-vertical" >
+	<div id="divSB-Body" class="div-full">
+		<div class="div-sb-b-m box-horizontal">
+			<div class="div-sb-b-m-msg div-full">
+				<div data-type="name">上汤菜心</div>
+				<div data-type="price">¥:&nbsp;8888.88</div>
+			</div>
+			<div class="div-sb-b-m-cat">-</div>
+			<div class="div-sb-b-m-add">+</div>
+			<div class="div-sb-b-m-count">8</div>
+		</div>
+	</div>
+	<div id="divSB-Sum">
+		总数量:&nbsp;<span id="divSB-Title-SumCount">--.--</span>
+		&nbsp;&nbsp;
+		合计:&nbsp;<span id="divSB-Title-SumPrice">--.--</span>
+		&nbsp;&nbsp;
+		清空
+	</div>
+	<div id="divSB-Bottom" class="box-horizontal">
+		<div class="div-full">下单</div>
+		<div class="div-full" onclick="openateBasket({event:this, otype:'hide'})">返回 </div>
+	</div>
+</div>
+
+<div id="divFoodView" class="box-vertical">
+	<div id="divFoodView-Body" class="div-full">
+		<!-- 
+		<div class="div-fv-lb-m box-horizontal">
+			<div class="div-fv-lb-m-img"></div>
+			<div class="div-fv-lb-m-msg div-full">
+				<div data-type="name">上汤菜心</div>
+				<div data-type="price">¥:&nbsp;8888.88</div>
+			</div>
+			<div class="div-fv-lb-m-has">+</div>
+		</div>
+		 -->
+		<div id="divFoodView-Body-Paging" onclick="foodDataPaging()"></div>
+	</div>
+	<div id="divFoodView-BottomNav" class="box-horizontal">
+		<div id="div-fv-bn-kitchen" class="div-full">分厨</div>
+		<div id="div-fv-bn-basket" class="div-full">购物篮&nbsp;<span id="spanShoppingBasket" style="color: #00aa00; visibility: hidden;"></span></div>
+		<div class="div-full" onclick="window.location.reload()">刷新</div>
+		<div class="div-full">更多</div>
+	</div>
+</div>
+
+
+
+</body>
+</html>
