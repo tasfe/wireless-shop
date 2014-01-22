@@ -1,4 +1,4 @@
-package com.ws.socket.javaSocket;
+package com.ws.server.jsocket;
 
 import java.io.IOException;
 import java.net.ServerSocket;

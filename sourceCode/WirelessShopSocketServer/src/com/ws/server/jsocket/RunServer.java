@@ -1,4 +1,4 @@
-package com.ws.socket;
+package com.ws.server.jsocket;
 
 import java.io.IOException;
 import java.sql.SQLException;
@@ -10,7 +10,6 @@ import com.ws.dao.food.IFoodDao;
 import com.ws.dao.food.impl.FoodDao;
 import com.ws.pojo.exception.BusinessException;
 import com.ws.pojo.food.Food;
-import com.ws.socket.javaSocket.PrintServerMainHandler;
 import com.ws.util.DBHelper;
 import com.ws.util.InitParamsUtil;
 import com.ws.util.json.JObject;
@@ -29,7 +28,7 @@ public class RunServer {
 			// 读取配置文件
 			if(args == null || args.length == 0){
 				// 读取默认配置文件
-				config = JObject.getConfig(RunServer.class.getClassLoader().getResourceAsStream("com/wr/config/config.json"));
+				config = JObject.getConfig(RunServer.class.getClassLoader().getResourceAsStream("com/ws/config/config.json"));
 			}else if(args[0].indexOf("/") >= 0){
 				// 读取相对路径配置文件
 				config = JObject.getConfig(RunServer.class.getClassLoader().getResourceAsStream(args[0]));
@@ -79,7 +78,6 @@ public class RunServer {
 			e.printStackTrace();
 		}
 	}
-	
 	
 	static void updatePrice() throws SQLException, BusinessException{
 		IFoodDao foodDao = new FoodDao();
