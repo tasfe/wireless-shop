@@ -25,13 +25,13 @@
     <filter-name>VerifyRequestActionFilter</filter-name>
     <url-pattern>*.action</url-pattern>
   </filter-mapping>
-  <!-- admin -->
+  <!-- admin
   <filter>
     <filter-name>AdminBasicFilter</filter-name>
     <filter-class>com.ws.web.filter.AdminBasicFilter</filter-class>
     <init-param>
       <param-name>PageWhiteList</param-name>
-      <param-value>index.htm</param-value>
+      <param-value>login.htm</param-value>
     </init-param>
     <init-param>
       <param-name>ActionWhiteList</param-name>
@@ -42,6 +42,7 @@
     <filter-name>AdminBasicFilter</filter-name>
     <url-pattern>/admin/*</url-pattern>
   </filter-mapping>
+   -->
   <!-- mobile -->
   <filter>
     <filter-name>MobileBasicFilter</filter-name>

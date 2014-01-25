@@ -1,285 +1,186 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>后台管理 - 登陆</title>
-<meta http-equiv="content-Type" content="text/html; charset=utf-8">
-<meta http-equiv="pragma" content="no-cache"> 
-<meta http-equiv="Cache-Control" content="no-store, must-revalidate"> 
-<meta http-equiv="expires" content="0">
-<meta name="viewport" content="initial-scale=1.0,user-scalable=no,maximum-scale=1,width=device-width">
-<style>
-	*{padding:0;margin:0;}
-	html, body{ height: 100%;}
-	a{text-decoration: none;}
-	a:hover{text-decoration: underline;}
-	body{
-	    overflow: hidden;
-	    font: 13px 'Lucida Sans Unicode', 'Trebuchet MS', Arial, Helvetica;    
-	}
-	#divLoginBg{
-		position: absolute;
-		z-index: 0;
-		width: 100%;
-		height: 100%;
-		background-color: #ddd;
-		background-size: 13px 13px, 29px 29px, 37px 37px, 53px 53px;
-		background-image: -webkit-linear-gradient(0, rgba(255, 255, 255, .07) 50%, transparent 50%), 
-			-webkit-linear-gradient(0, rgba(255, 255, 255, .13) 50%, transparent 50%), 
-			-webkit-linear-gradient(0, transparent 50%, rgba(255, 255, 255, .17) 50%),
-			-webkit-linear-gradient(0, transparent 50%, rgba(255, 255, 255, .19) 50%);
-		background-image: -moz-linear-gradient(0, rgba(255, 255, 255, .07) 50%, transparent 50%),
-			-moz-linear-gradient(0, rgba(255, 255, 255, .13) 50%, transparent 50%), 
-			-moz-linear-gradient(0, transparent 50%, rgba(255, 255, 255, .17) 50%),
-			-moz-linear-gradient(0, transparent 50%, rgba(255, 255, 255, .19) 50%);
-	}
-	/*--------------------*/
-	#divLogin{
-	    background-color: #fff;
-	    background-image: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#eee));
-	    background-image: -webkit-linear-gradient(top, #fff, #eee);
-	    background-image: -moz-linear-gradient(top, #fff, #eee);
-	    background-image: linear-gradient(top, #fff, #eee);  
-	    height: 240px;
-	    width: 300px;
-	    margin: -150px 0 0 -180px;
-	    padding: 30px;
-	    position: absolute;
-	    top: 50%;
-	    left: 50%;
-	    z-index: 0;
-	    -moz-border-radius: 3px;
-	    -webkit-border-radius: 3px;
-	    border-radius: 3px;  
-	    -webkit-box-shadow:
-	          0 0 2px rgba(0, 0, 0, 0.2),
-	          0 1px 1px rgba(0, 0, 0, .2),
-	          0 3px 0 #fff,
-	          0 4px 0 rgba(0, 0, 0, .2),
-	          0 6px 0 #fff,  
-	          0 7px 0 rgba(0, 0, 0, .2);
-	    -moz-box-shadow:
-	          0 0 2px rgba(0, 0, 0, 0.2),  
-	          1px 1px   0 rgba(0,   0,   0,   .1),
-	          3px 3px   0 rgba(255, 255, 255, 1),
-	          4px 4px   0 rgba(0,   0,   0,   .1),
-	          6px 6px   0 rgba(255, 255, 255, 1),  
-	          7px 7px   0 rgba(0,   0,   0,   .1);
-	    box-shadow:
-	          0 0 2px rgba(0, 0, 0, 0.2),  
-	          0 1px 1px rgba(0, 0, 0, .2),
-	          0 3px 0 #fff,
-	          0 4px 0 rgba(0, 0, 0, .2),
-	          0 6px 0 #fff,  
-	          0 7px 0 rgba(0, 0, 0, .2);
-	}
-	#divLogin:before{
-	    content: '';
-	    position: absolute;
-	    z-index: -1;
-	    border: 1px dashed #ccc;
-	    top: 5px;
-	    bottom: 5px;
-	    left: 5px;
-	    right: 5px;
-	    -moz-box-shadow: 0 0 0 1px #fff;
-	    -webkit-box-shadow: 0 0 0 1px #fff;
-	    box-shadow: 0 0 0 1px #fff;
-	}
-	/*--------------------*/
-	h1{
-	    //text-shadow: 0 1px 0 rgba(255, 255, 255, .7), 0px 2px 0 rgba(0, 0, 0, .5);
-	    text-transform: uppercase;
-	    text-align: center;
-	    color: #666;
-	    margin: 0 0 30px 0;
-	    letter-spacing: 4px;
-	    font:  bold 26px/1 Verdana, Helvetica;
-	    position: relative;
-	}
-	h1:after, h1:before{
-	    background-color: #777;
-	    content: "";
-	    height: 1px;
-	    position: absolute;
-	    top: 15px;
-	    width: 80px;   
-	}
-	h1:after{ 
-	    background-image: -webkit-gradient(linear, left top, right top, from(#777), to(#fff));
-	    background-image: -webkit-linear-gradient(left, #777, #fff);
-	    background-image: -moz-linear-gradient(left, #777, #fff);
-	    background-image: linear-gradient(left, #777, #fff);      
-	    right: 0;
-	}
-	h1:before{
-	    background-image: -webkit-gradient(linear, right top, left top, from(#777), to(#fff));
-	    background-image: -webkit-linear-gradient(right, #777, #fff);
-	    background-image: -moz-linear-gradient(right, #777, #fff);
-	    background-image: linear-gradient(right, #777, #fff);
-	    left: 0;
-	}
-	/*--------------------*/
-	fieldset{border: 0;}
-	/*--------------------*/
-	#inputs input{
-	    background: #f1f1f1 url(../images/login-sprite.png) no-repeat;
-	    padding: 15px 15px 15px 30px;
-	    margin: 0 0 10px 0;
-	    width: 253px; /* 353 + 2 + 45 = 400 */
-	    border: 1px solid #ccc;
-	    -moz-border-radius: 5px;
-	    -webkit-border-radius: 5px;
-	    border-radius: 5px;
-	    -moz-box-shadow: 0 1px 1px #ccc inset, 0 1px 0 #fff;
-	    -webkit-box-shadow: 0 1px 1px #ccc inset, 0 1px 0 #fff;
-	    box-shadow: 0 1px 1px #ccc inset, 0 1px 0 #fff;
-	}
-	#txtUserName{
-	    background-position: 5px -2px !important;
-	    font-size: 16px;
-	}
-	#txtPassword{
-	    background-position: 5px -52px !important;
-	    font-size: 16px;
-	}
-	#inputs input:focus{
-	    background-color: #fff;
-	    border-color: #e8c291;
-	    outline: none;
-	    -moz-box-shadow: 0 0 0 1px #e8c291 inset;
-	    -webkit-box-shadow: 0 0 0 1px #e8c291 inset;
-	    box-shadow: 0 0 0 1px #e8c291 inset;
-	}
-	/*--------------------*/
-	#actions{margin: 25px 0 0 0;}
-	#btnLoginSubmit{		
-	    background-color: #ffb94b;
-	    background-image: -webkit-gradient(linear, left top, left bottom, from(#fddb6f), to(#ffb94b));
-	    background-image: -webkit-linear-gradient(top, #fddb6f, #ffb94b);
-	    background-image: -moz-linear-gradient(top, #fddb6f, #ffb94b);
-	    background-image: linear-gradient(top, #fddb6f, #ffb94b);
-	    
-	    -moz-border-radius: 3px;
-	    -webkit-border-radius: 3px;
-	    border-radius: 3px;
-	    
-	    text-shadow: 0 1px 0 rgba(255,255,255,0.5);
-	    
-	    -moz-box-shadow: 0 0 1px rgba(0, 0, 0, 0.3), 0 1px 0 rgba(255, 255, 255, 0.3) inset;
-	    -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0.3), 0 1px 0 rgba(255, 255, 255, 0.3) inset;
-	    box-shadow: 0 0 1px rgba(0, 0, 0, 0.3), 0 1px 0 rgba(255, 255, 255, 0.3) inset;    
-	    
-	    border-width: 1px;
-	    border-style: solid;
-	    border-color: #d69e31 #e3a037 #d5982d #e3a037;
-	
-	    float: left;
-	    height: 35px;
-	    padding: 0;
-	    width: 120px;
-	    cursor: pointer;
-	    font: bold 15px Arial, Helvetica;
-	    color: #8f5a0a;
-	}
-	#btnLoginSubmit:hover,#btnLoginSubmit:focus{		
-	    background-color: #fddb6f;
-	    background-image: -webkit-gradient(linear, left top, left bottom, from(#ffb94b), to(#fddb6f));
-	    background-image: -webkit-linear-gradient(top, #ffb94b, #fddb6f);
-	    background-image: -moz-linear-gradient(top, #ffb94b, #fddb6f);
-	    background-image: linear-gradient(top, #ffb94b, #fddb6f);
-	}	
-	#btnLoginSubmit:active{
-		outline: none;
-		-moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.5) inset;
-		-webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.5) inset;
-		box-shadow: 0 1px 4px rgba(0, 0, 0, 0.5) inset;		
-	}
-	#btnLoginSubmit::-moz-focus-inner{ border: none; }
-	#actions a{
-	    color: #3151A2;    
-	    float: right;
-	    line-height: 35px;
-	    margin-left: 20px;
-	}
-	/*--------------------*/
-	#about{
-	    display: block;
-	    text-align: center;
-	    position: relative;
-	    top: 60px;
-	    color: #999;
-	}
-</style>
-
-<script type="text/javascript" src="../lib/js/zepto/zepto.min.js"></script>
-<link type="text/css" rel="stylesheet" href="../lib/js/zepto/zepto.ux.css">
-<script type="text/javascript" src="../lib/js/zepto/zepto.ux.js"></script>
-<script type="text/javascript" src="../lib/js/md5.js"></script>
-<script type="text/javascript">
-function login(){
-	var name = $('#txtUserName');
-	var pwd = $('#txtPassword');
-	/* 
-	$.msg.show({
-		title:name.val(),
-		msg:'pwd:  '+pwd.val()
-	});
-	return;
-	*/
-	var msg = '';
-	if(!/^[a-zA-Z][a-zA-Z0-9]{2,16}$/.test(name.val().trim()))
-		msg += '请输入4~16位, 由数字和字母组成, 且手写为字母的用户名.';
-	if(!/^[a-zA-Z0-9]{4,16}$/.test(pwd.val().trim())){
-		if(!msg.isEmpty())
-			msg += '<br>'
-		msg += '请输入4~16位, 由数字和字母组成密码.';
-	}
-	if(!msg.isEmpty()){
-		$.tip.show({ msg: msg});
-		return;
-	}
-	$.LM.show();
-	$.ajax({
-		url : '../admin/AdminLogin.action',
-		type : 'post',
-		data : {
-			'staff.rid' : 26,
-			'staff.name' : name.val(),
-			'staff.pwd' : MD5(pwd.val())
-		},
-		success : function(data, xhr, status){
-			data = JSON.parse(data);
-			//alert(data.success)
-			if(data.success){
-				window.location.href = "./main.htm"
-			}else{
-				$.LM.hide();
-				$.tip.show(data);
-			}
-		},
-		error : function(){
-			$.LM.hide();
-			alert('error')
-		}
-	});
-}
-</script>
+	<title>Unicorn Admin</title>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="stylesheet" href="css/bootstrap.min.css" />
+	<link rel="stylesheet" href="css/bootstrap-responsive.min.css" />
+	<link rel="stylesheet" href="css/fullcalendar.css" />
+	<link rel="stylesheet" href="css/unicorn.main.css" />
+	<link rel="stylesheet" href="css/unicorn.grey.css" class="skin-color" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 </head>
 <body>
 
-<div id="divLoginBg"></div>
-<div id="divLogin">
-    <h1>管理后台</h1>
-    <fieldset id="inputs">
-        <input id="txtUserName" type="text" value="admin" placeholder="请输入用户名" autofocus required>   
-        <input id="txtPassword" type="password" value="admin" placeholder="请输入密码" required>
-    </fieldset>
-    <fieldset id="actions">
-        <input id="btnLoginSubmit" type="button" value="登陆" onClick="login()">
-        <a href="">忘 记 密 码</a><a href="">注 册</a>
-    </fieldset>
-    <a href="" id="about">关于我们</a>
-</div>
+	<div id="sidebar">
+		<!-- <a href="#" class="visible-phone">
+			<i class="icon icon-home"></i>Dashboard
+		</a> -->
+		<div class="header" style="height:77px; color:#fff;">logo</div>
+		<ul>
+			<li class="active">
+				<a href="index.html">
+				<i class="icon icon-home"></i> <span>Dashboard</span>
+				</a>
+			</li>
+			<li class="submenu">
+				<a href="#">
+				<i class="icon icon-th-list"> </i>
+				<span>Form elements</span> <span class="label">3</span>
+				</a>
+				<ul>
+					<li><a href="form-common.html">Common elements</a></li>
+					<li><a href="form-validation.html">Validation</a></li>
+					<li><a href="form-wizard.html">Wizard</a></li>
+				</ul>
+			</li>
+			<li><a href="buttons.html"><i class="icon icon-tint"></i> <span>Buttons
+						&amp; icons</span></a></li>
+			<li><a href="interface.html"><i class="icon icon-pencil"></i>
+					<span>Interface elements</span></a></li>
+			<li><a href="tables.html"><i class="icon icon-th"></i> <span>Tables</span></a></li>
+			<li><a href="grid.html"><i class="icon icon-th-list"></i> <span>Grid
+						Layout</span></a></li>
+			<li class="submenu"><a href="#"><i class="icon icon-file"></i>
+					<span>Sample pages</span> <span class="label">4</span></a>
+				<ul>
+					<li><a href="invoice.html">Invoice</a></li>
+					<li><a href="chat.html">Support chat</a></li>
+					<li><a href="calendar.html">Calendar</a></li>
+					<li><a href="gallery.html">Gallery</a></li>
+				</ul></li>
+			<li>
+				<a href="charts.html">
+				<i class="icon icon-signal"></i> 
+				<span>Charts&amp; graphs</span>
+				</a>
+			</li>
+			<li>
+				<a href="widgets.html"><i class="icon icon-inbox"></i> <span>Widgets</span></a>
+			</li>
+		</ul>
+	</div>
+	<div id="style-switcher">
+		<i class="icon-arrow-left icon-white"></i> <span>Style:</span> 
+		 <a href="#grey" style="background-color: #555555; border-color: #aaaaaa;"></a> 
+		 <a href="#blue" style="background-color: #2D2F57;"></a>
+		 <a href="#red" style="background-color: #673232;"></a>
+	</div>
+	<div id="content">
+		<div id="content-header">
+			<h1>Dashboard</h1>
+			<div class="btn-group">
+				<a class="btn btn-large tip-bottom" title="Manage Files"><i
+					class="icon-file"></i></a> <a class="btn btn-large tip-bottom"
+					title="Manage Users"><i class="icon-user"></i></a> <a
+					class="btn btn-large tip-bottom" title="Manage Comments"><i
+					class="icon-comment"></i><span class="label label-important">5</span></a>
+				<a class="btn btn-large tip-bottom" title="Manage Orders"><i
+					class="icon-shopping-cart"></i></a>
+			</div>
+		</div>
+		<div id="breadcrumb">
+			<a href="#" title="Go to Home" class="tip-bottom"> <i class="icon-home"></i> Home </a> 
+			<a href="#" class="current">Dashboard</a>
+		</div>
+		<div class="container-fluid">
+			<div class="row-fluid">
+				<div class="span12 center" style="text-align: center;">
+					<ul class="stat-boxes">
+						<li>
+							<div class="left peity_bar_good">
+								<span>2,4,9,7,12,10,12</span>+20%
+							</div>
+							<div class="right">
+								<strong>36094</strong> Visits
+							</div>
+						</li>
+						<li>
+							<div class="left peity_bar_neutral">
+								<span>20,15,18,14,10,9,9,9</span>0%
+							</div>
+							<div class="right">
+								<strong>1433</strong> Users
+							</div>
+						</li>
+						<li>
+							<div class="left peity_bar_bad">
+								<span>3,5,9,7,12,20,10</span>-50%
+							</div>
+							<div class="right">
+								<strong>8650</strong> Orders
+							</div>
+						</li>
+						<li>
+							<div class="left peity_line_good">
+								<span>12,6,9,23,14,10,17</span>+70%
+							</div>
+							<div class="right">
+								<strong>8650</strong> Orders
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="row-fluid">
+				<div class="span12">
+					<div class="alert alert-info">
+						Welcome in the <strong>Unicorn Admin Theme</strong>. Don't forget
+						to check all the pages! <a href="#" data-dismiss="alert"
+							class="close">×</a>
+					</div>
+					<div class="widget-box">
+						<div class="widget-title">
+							<span class="icon"><i class="icon-signal"></i></span>
+							<h5>Site Statistics</h5>
+							<div class="buttons">
+								<a href="#" class="btn btn-mini"><i class="icon-refresh"></i>
+									Update stats</a>
+							</div>
+						</div>
+						<div class="widget-content">
+							<div class="row-fluid">
+								<div class="span4">
+									<ul class="site-stats">
+										<li><i class="icon-user"></i> <strong>1433</strong> <small>Total
+												Users</small></li>
+										<li><i class="icon-arrow-right"></i> <strong>16</strong>
+											<small>New Users (last week)</small></li>
+										<li class="divider"></li>
+										<li><i class="icon-shopping-cart"></i> <strong>259</strong>
+											<small>Total Shop Items</small></li>
+										<li><i class="icon-tag"></i> <strong>8650</strong> <small>Total
+												Orders</small></li>
+										<li><i class="icon-repeat"></i> <strong>29</strong> <small>Pending
+												Orders</small></li>
+									</ul>
+								</div>
+								<div class="span8">
+									<div class="chart"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row-fluid">
+				<div id="footer" class="span12">
+					2012 &copy; <a>about</a>
+				</div>
+			</div>
+		</div>
+	</div>
 
+	<script src="js/excanvas.min.js"></script>
+	<script src="js/jquery.min.js"></script>
+	<script src="js/jquery.ui.custom.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/jquery.flot.min.js"></script>
+	<script src="js/jquery.flot.resize.min.js"></script>
+	<script src="js/jquery.peity.min.js"></script>
+	<script src="js/fullcalendar.min.js"></script>
+	<script src="js/unicorn.js"></script>
+	<script src="js/unicorn.dashboard.js"></script>
 </body>
-
+</html>
