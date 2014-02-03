@@ -7,7 +7,7 @@ import com.ws.pojo.system.Restaurant;
 import com.ws.util.DBHelper;
 
 public interface IRestaurantDao {
-	public static final String DB_T_NAME = DBHelper.dbName + ".wr_restaurant"; 
+	public static final String DB_T_NAME = DBHelper.dbName + ".ws_restaurant"; 
 	
 	public List<Restaurant> getRestaurant(DBHelper conn, String extra) throws SQLException;
 	public List<Restaurant> getRestaurant(String extra) throws SQLException;
