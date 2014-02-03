@@ -1,16 +1,9 @@
 package com.ws.server.jsocket;
 
 import java.io.IOException;
-import java.sql.SQLException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.List;
 
-import com.ws.dao.food.IFoodDao;
-import com.ws.dao.food.impl.FoodDao;
-import com.ws.pojo.exception.BusinessException;
-import com.ws.pojo.food.Food;
-import com.ws.util.DBHelper;
 import com.ws.util.InitParamsUtil;
 import com.ws.util.json.JObject;
 
@@ -79,18 +72,5 @@ public class RunServer {
 		}
 	}
 	
-	static void updatePrice() throws SQLException, BusinessException{
-		IFoodDao foodDao = new FoodDao();
-		List<Food> list = foodDao.getByExtra(" AND F.r_id = 26 ");
-		DBHelper conn = DBHelper.newInstance();
-		int count = 0;
-		for(Food temp : list){
-			temp.setPrice((float) (Math.random() * 1000));
-			foodDao.update(conn, temp);
-			System.out.println("food alias: " + temp.getAlias());
-			count++;
-		}
-		System.out.println("count: "+count);
-	}
 	
 }
