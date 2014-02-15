@@ -13,7 +13,7 @@
 	width: 99%;
 	border: 1px solid #ccc;
 	margin-top: 5px;
-	border-radius: 10px;
+	border-radius: 5px;
 	opacity: 0;
 	background-color: #fff;
 	background-image: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#eee));

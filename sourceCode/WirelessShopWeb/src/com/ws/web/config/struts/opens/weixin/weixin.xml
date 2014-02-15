@@ -4,11 +4,11 @@
     "http://struts.apache.org/dtds/struts-2.3.dtd" >
 <struts>
 	<package namespace="/" name="opens.weixin" extends="my-struts">	
-		<action name="WeiXinEntry" class="com.ws.web.opens.weixin.EntryAction">
+		<!-- <action name="WeiXinEntry" class="com.ws.web.opens.weixin.EntryAction">
 			<result name="none" type="string"> </result>
 		</action>
 		<action name="WeiXinQueryFood" class="com.ws.web.action.share.QueryFoodAction">
 			<result name="none" type="string"> </result>
-		</action>
+		</action> -->
 	</package>
 </struts>

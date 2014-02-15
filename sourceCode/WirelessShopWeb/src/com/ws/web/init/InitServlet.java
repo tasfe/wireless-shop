@@ -5,8 +5,7 @@ import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 
-import net.sf.json.JSONObject;
-
+import com.alibaba.fastjson.JSONObject;
 import com.ws.util.InitParamsUtil;
 import com.ws.util.json.JObject;
 

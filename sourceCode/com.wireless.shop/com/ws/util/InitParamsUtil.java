@@ -3,11 +3,10 @@ package com.ws.util;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+import com.alibaba.fastjson.JSONObject;
 import com.ws.util.oss.OSSImageUtil;
 import com.ws.util.oss.OSSParams;
 import com.ws.util.oss.OSSUtil;
-
-import net.sf.json.JSONObject;
 
 public class InitParamsUtil {
 	

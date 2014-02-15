@@ -11,8 +11,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-import net.sf.json.JSONObject;
-
+import com.alibaba.fastjson.JSONObject;
 import com.aliyun.common.utils.IOUtils;
 import com.aliyun.openservices.ClientException;
 import com.aliyun.openservices.oss.OSSClient;
@@ -278,7 +277,7 @@ public class OSSImageUtil{
 				OSSUtil.init(OSSParams.init(cj.getString("ACCESS_ID"), cj.getString("ACCESS_KEY"), cj.getString("INNER_POINT"), cj.getString("OUTER_POINT")));
 				OSSImageUtil.init(cj.getString("BUCKET_IMAGE"));
 				
-				int otype = cj.getInt("OTYPE");
+				int otype = cj.getIntValue("OTYPE");
 				if(otype <= 0){
 					getKeyListForImg();
 				}else{

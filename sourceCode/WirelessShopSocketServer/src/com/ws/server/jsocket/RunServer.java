@@ -4,10 +4,9 @@ import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+import com.alibaba.fastjson.JSONObject;
 import com.ws.util.InitParamsUtil;
 import com.ws.util.json.JObject;
-
-import net.sf.json.JSONObject;
 
 public class RunServer {
 	
@@ -71,6 +70,5 @@ public class RunServer {
 			e.printStackTrace();
 		}
 	}
-	
 	
 }

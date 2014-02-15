@@ -4,7 +4,7 @@
     "http://struts.apache.org/dtds/struts-2.3.dtd" >
 <struts>
 	<package namespace="/" name="share" extends="my-struts">
-		<action name="QueryFood" class="com.ws.web.action.share.QueryFoodAction">
+		<!-- <action name="QueryFood" class="com.ws.web.action.share.QueryFoodAction">
 			<result name="none" type="string"> </result>
 		</action>
 		<action name="QueryDept" class="com.ws.web.action.share.QueryDeptAction">
@@ -12,6 +12,6 @@
 		</action>
 		<action name="QueryKitchen" class="com.ws.web.action.share.QueryKitchenAction">
 			<result name="none" type="string"> </result>
-		</action>
+		</action> -->
 	</package>
 </struts>

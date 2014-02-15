@@ -4,18 +4,14 @@
 	<classpathentry kind="src" path="com.wireless.shop"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="lib" path="/WirelessShopWeb/WirelessShopWeb/WEB-INF/lib/aliyun-openservices-1.0.12.jar"/>
-	<classpathentry kind="lib" path="/WirelessShopWeb/WirelessShopWeb/WEB-INF/lib/commons-beanutils-1.8.3.jar"/>
 	<classpathentry kind="lib" path="/WirelessShopWeb/WirelessShopWeb/WEB-INF/lib/commons-codec-1.4.jar"/>
-	<classpathentry kind="lib" path="/WirelessShopWeb/WirelessShopWeb/WEB-INF/lib/commons-collections-3.2.1.jar"/>
-	<classpathentry kind="lib" path="/WirelessShopWeb/WirelessShopWeb/WEB-INF/lib/commons-lang-2.6.jar"/>
 	<classpathentry kind="lib" path="/WirelessShopWeb/WirelessShopWeb/WEB-INF/lib/commons-logging-1.1.1.jar"/>
-	<classpathentry kind="lib" path="/WirelessShopWeb/WirelessShopWeb/WEB-INF/lib/ezmorph-1.0.6.jar"/>
 	<classpathentry kind="lib" path="/WirelessShopWeb/WirelessShopWeb/WEB-INF/lib/httpclient-4.1.3.jar"/>
 	<classpathentry kind="lib" path="/WirelessShopWeb/WirelessShopWeb/WEB-INF/lib/httpcore-4.1.4.jar"/>
 	<classpathentry kind="lib" path="/WirelessShopWeb/WirelessShopWeb/WEB-INF/lib/jdom-1.1.jar"/>
-	<classpathentry kind="lib" path="/WirelessShopWeb/WirelessShopWeb/WEB-INF/lib/json-lib-2.4-jdk15.jar"/>
 	<classpathentry kind="lib" path="/WirelessShopWeb/WirelessShopWeb/WEB-INF/lib/mail.jar"/>
 	<classpathentry kind="lib" path="/WirelessShopWeb/WirelessShopWeb/WEB-INF/lib/mysql-connector-java-5.1.22-bin.jar"/>
 	<classpathentry kind="lib" path="/WirelessShopWeb/WirelessShopWeb/WEB-INF/lib/pinyin4j-2.5.0.jar"/>
+	<classpathentry kind="lib" path="/WirelessShopWeb/WirelessShopWeb/WEB-INF/lib/fastjson-1.1.38.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

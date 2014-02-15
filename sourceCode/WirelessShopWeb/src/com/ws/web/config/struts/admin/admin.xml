@@ -7,7 +7,7 @@
 		<action name="AdminLogin" class="com.ws.web.action.admin.AdminLoginAction">
 			<result name="none" type="string"> </result>
 		</action>
-		<action name="OperateDept" class="com.ws.web.action.admin.dept.OperateDeptAction">
+		<!-- <action name="OperateDept" class="com.ws.web.action.admin.dept.OperateDeptAction">
 			<result name="none" type="string"> </result>
 		</action>
 		<action name="OperateKitchen" class="com.ws.web.action.admin.dept.OperateKitchenAction">
@@ -18,6 +18,6 @@
 		</action>
 		<action name="OperateFoodImage" class="com.ws.web.action.admin.food.OperateFoodImageAction">
 			<result name="none" type="string"> </result>
-		</action>
+		</action> -->
 	</package>
 </struts>

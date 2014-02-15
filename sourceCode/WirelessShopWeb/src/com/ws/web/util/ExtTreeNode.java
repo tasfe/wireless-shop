@@ -4,7 +4,7 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
-import net.sf.json.JSONObject;
+import com.alibaba.fastjson.JSONObject;
 
 public class ExtTreeNode{
 	
@@ -71,7 +71,7 @@ public class ExtTreeNode{
 		if(this.other != null && !this.other.isEmpty()){
 			jm.put("other", this.other);
 		}
-		return JSONObject.fromObject(jm).toString();
+		return JSONObject.toJSONString(jm);
 	}
 	
 }
