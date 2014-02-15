@@ -11,8 +11,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
-import net.sf.json.JSONObject;
-
+import com.alibaba.fastjson.JSONObject;
 import com.aliyun.common.utils.IOUtils;
 import com.aliyun.openservices.ClientException;
 import com.aliyun.openservices.oss.OSSClient;
@@ -180,7 +179,7 @@ public class OSSUtil {
 		while((data = br.readLine()) != null){
 			config += data;
 		} 
-		return JSONObject.fromObject(config);
+		return JSONObject.parseObject(config);
     }
 
 	public static OSSParams getParams() {

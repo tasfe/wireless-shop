@@ -14,12 +14,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 
+import com.alibaba.fastjson.JSONObject;
 import com.ws.pojo.exception.BusinessException;
-
-import net.sf.json.JSONObject;
-import net.sf.json.JSONSerializer;
-import net.sf.json.JsonConfig;
-import net.sf.json.util.CycleDetectionStrategy;
 
 public class JObject {
 	private boolean success = true;			// 操作状态
@@ -32,7 +28,6 @@ public class JObject {
 	private Map<Object, Object> other;		// 其他附加信息
 	
 	private int jflag = 0;
-	private JsonConfig jc;
 	
 	private int ERROR_CODE = 9999;
 	
@@ -139,11 +134,6 @@ public class JObject {
 		this.jflag = jflag;
 		return this;
 	}
-	private void initJsonConfig(){
-		this.jc = new JsonConfig();
-		this.jc.setIgnoreDefaultExcludes(false);       
-		this.jc.setCycleDetectionStrategy(CycleDetectionStrategy.LENIENT);     
-	}
 	
 	@Override
 	public String toString() {
@@ -158,8 +148,7 @@ public class JObject {
 		copy.put("other", this.other);
 		changeToMap(copy);
 		
-		initJsonConfig();
-		return JSONSerializer.toJSON(copy, this.jc).toString();
+		return JSONObject.toJSONString(copy);
 	}
 	
 	/**
@@ -179,7 +168,7 @@ public class JObject {
     	}catch(IOException e){
     		throw new IOException("配置文件读取出错, 文件不存在, 或文件路径配置不正确.");
     	}
-		return JSONObject.fromObject(config);
+		return JSONObject.parseObject(config);
 	}
 	/**
 	 * 读取配置文件
@@ -203,7 +192,7 @@ public class JObject {
     	}catch(IOException e){
     		throw new IOException("配置文件读取出错, 文件不存在, 或文件路径配置不正确.");
     	}
-		return JSONObject.fromObject(config);
+		return JSONObject.parseObject(config);
 	}
 	
 	public boolean isSuccess() {
@@ -253,12 +242,6 @@ public class JObject {
 	}
 	public void setOther(Map<Object, Object> other) {
 		this.other = other;
-	}
-	public JsonConfig getJc() {
-		return jc;
-	}
-	public void setJc(JsonConfig jc) {
-		this.jc = jc;
 	}
 	public int getERROR_CODE() {
 		return ERROR_CODE;
